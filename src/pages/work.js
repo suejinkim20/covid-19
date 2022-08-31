@@ -25,8 +25,14 @@ return (
           We will update this page with the latest projects coming out of RENCI as our researchers and their partners work together to develop novel approaches for dealing with COVID-19.
         </Paragraph>
       </TitleCard>
-
       <Masonry 
+        items={work} 
+        columnGutter={24}
+        columnWidth={300}
+        render={WorkCard}
+      />
+
+      {/* <Masonry 
         items={activeWork} 
         columnGutter={24}
         columnWidth={300}
@@ -40,7 +46,7 @@ return (
         columnGutter={24}
         columnWidth={300}
         render={WorkCard}
-      />
+      /> */}
 
     </PageContent>
   )
