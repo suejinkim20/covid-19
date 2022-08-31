@@ -4,6 +4,7 @@ import { Card, CardHeader, CardBody } from '../../../components/card'
 import { kebabCase } from '../../../util'
 import { Paragraph } from '../../../components/typography'
 import { LinkButton } from '../../../components/link'
+import { PastLabel } from '../../label'
 
 export const WorkCard = ({  data: {frontmatter}  }) => {
   return (
@@ -15,7 +16,10 @@ export const WorkCard = ({  data: {frontmatter}  }) => {
             maxWidth: '600px'
         }}
     >
-        <CardHeader>{ frontmatter.title }</CardHeader>
+      {
+        frontmatter.active && <PastLabel>Past</PastLabel>
+      }
+        <CardHeader style={{paddingTop: frontmatter.active ? '3.1rem' : '1.5rem'}}>{ frontmatter.title }</CardHeader>
         <CardBody style={{
             display: 'flex', 
             flexDirection: 'column', 
